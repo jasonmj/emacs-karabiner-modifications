@@ -1,0 +1,1359 @@
+{
+    "title": "Emacs",
+    "rules": [
+        {
+            "description": "Beginning of line",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "a"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "description": "",
+                            "bundle_identifiers": [
+                                "com\\.apple\\.Terminal"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "modifiers": [
+                                "left_control"
+                            ],
+                            "key_code": "a",
+                            "halt": false
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "a"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "description": "",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "modifiers": [
+                                "left_gui"
+                            ],
+                            "key_code": "left_arrow",
+                            "halt": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "End of line",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "e"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "description": "",
+                            "bundle_identifiers": [
+                                "com\\.apple\\.Terminal"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "modifiers": [
+                                "left_control"
+                            ],
+                            "key_code": "e",
+                            "halt": false
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "e"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_gui"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Beginning of line select",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui",
+                                "left_shift"
+                            ]
+                        },
+                        "key_code": "a"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs",
+                                "com\\.apple\\.finder"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_gui",
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "End of line select",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui",
+                                "left_shift"
+                            ]
+                        },
+                        "key_code": "e"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_gui",
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Next line",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "n"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "down_arrow"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Previous line",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "p"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "up_arrow"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Next line select",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui",
+                                "left_shift"
+                            ]
+                        },
+                        "key_code": "n"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "down_arrow",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Previous line select",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui",
+                                "left_shift"
+                            ]
+                        },
+                        "key_code": "p"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "up_arrow",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Backward character",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "b"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "com\\.apple\\.Terminal"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "b",
+                            "modifiers": ["left_control"]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "b"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "left_arrow"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Forward character",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "f"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "com\\.apple\\.Terminal"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "f",
+                            "modifiers": ["left_control"]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "f"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "right_arrow"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Backward character select",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui",
+                                "left_shift"
+                            ]
+                        },
+                        "key_code": "b"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Forward character select",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui",
+                                "left_shift"
+                            ]
+                        },
+                        "key_code": "f"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Backward word",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ]
+                        },
+                        "key_code": "b"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "com\\.apple\\.Terminal"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ]
+                        },
+                        "key_code": "b"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Forward word",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ]
+                        },
+                        "key_code": "f"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "com\\.apple\\.Terminal"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ]
+                        },
+                        "key_code": "f"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Backward word select",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ]
+                        },
+                        "key_code": "b"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_shift",
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Forward word select",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ]
+                        },
+                        "key_code": "f"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_shift",
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Forward delete character",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "d"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "delete_or_backspace",
+                            "modifiers": [
+                                "fn"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Forward delete word",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ]
+                        },
+                        "key_code": "d"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "delete_or_backspace",
+                            "modifiers": [
+                                "fn",
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Backward delete word",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "delete_or_backspace"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs",
+                                "com\\.apple\\.finder"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "delete_or_backspace",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Keyboard quit",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "g"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "escape"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Copy",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ]
+                        },
+                        "key_code": "w"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "c",
+                            "modifiers": [
+                                "left_gui"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        },
+                        "key_code": "c"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "c",
+                            "modifiers": [
+                                "left_gui"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Paste",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "y"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "v",
+                            "modifiers": [
+                                "left_gui"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        },
+                        "key_code": "v"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "v",
+                            "modifiers": [
+                                "left_gui"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "New",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": ["left_gui", "left_control"]
+                        },
+                        "key_code": "n"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "n",
+                            "modifiers": [
+                                "left_gui"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Spotlight",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "spacebar"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "spacebar",
+                            "modifiers": [
+                                "left_gui",
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Find",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ]
+                        },
+                        "key_code": "s"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "f",
+                            "modifiers": [ "left_gui" ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Yank pop",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ]
+                        },
+                        "key_code": "y"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "y",
+                            "modifiers": [ "left_gui", "left_option" ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Select all",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        },
+                        "key_code": "a"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "a",
+                            "modifiers": [ "left_gui" ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Beginning of page",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ]
+                        },
+                        "key_code": "comma"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "up_arrow",
+                            "modifiers": [ "left_gui" ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "End of page",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ]
+                        },
+                        "key_code": "period"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "down_arrow",
+                            "modifiers": [ "left_gui" ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Firefox back/forward",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        },
+                        "key_code": "close_bracket"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "org\\.mozilla\\.firefox"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "close_bracket",
+                            "modifiers": [ "left_gui" ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        },
+                        "key_code": "open_bracket"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "org\\.mozilla\\.firefox"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": true,
+                            "key_code": "open_bracket",
+                            "modifiers": [ "left_gui" ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Bold",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui",
+                                "left_control"
+                            ]
+                        },
+                        "key_code": "b"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "key_code": "b",
+                            "modifiers": [ "left_gui" ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Return or enter",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "left_gui"
+                            ]
+                        },
+                        "key_code": "m"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "description": "",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "repeat": false,
+                            "modifiers":[],
+                            "key_code": "return_or_enter",
+                            "halt": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Command Tab for Emacs",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "tab",
+                        "modifiers": {
+                            "mandatory": ["left_command"],
+                            "optional": ["left_shift"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "tab",
+                            "modifiers": ["left_command", "left_option"]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "description": "",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Alternative Command Tab for Emacs",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "w",
+                        "modifiers": {
+                            "mandatory": ["left_control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "f3"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "description": "",
+                            "bundle_identifiers": [
+                                "org\\.gnu\\.Emacs"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}
